@@ -1,0 +1,45 @@
+{% extends '@layout/default.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class="jumbotron welcome">
+        <h2>> hello.sh<span class="blink">_</span></h2>
+        <p>
+            My name is <i>Hugo Blanco</i> and I'm a <i>software engineer</i>.<br>
+            I have been working for over 9 years as a developer of backend technologies, mainly in e-commerce applications.
+        </p>
+        <p>
+            I am very curious and I am always looking for something new to learn. :)<br>
+        </p>
+        <p class="links">
+            <a href="https://github.com/blancohugo" target="_blank" class="btn btn-outline-dark">
+                <i class="fab fa-github"></i> Github
+            </a>
+            <a href="https://www.linkedin.com/in/blancohugo/" target="_blank" class="btn btn-outline-dark">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+        </p>
+    </div>
+
+    <div class="post-list">
+        <h2>Latest posts</h2>
+
+        <div class="masonry">
+            {% for post in posts %}
+            <div class="masonry-item">
+                <div class="post-item" data-masonry-content>
+                    <div class="post-body">
+                        <h3 class="sub-title">{{ post.title }}</h3>
+                        <time>{{ post.date|date('F j, Y') }}</time>
+                        <p class="post-summary">{{ post.summary }}</p>
+                        <a href="{{ path('post.detail', {post: post.slug}) }}" class="btn btn-outline-dark">Continue reading</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script src="/static/js/masonry.js"></script>
+{% endblock %}

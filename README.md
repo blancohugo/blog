@@ -1,0 +1,2 @@
+# blog
+blancohugo.com blog

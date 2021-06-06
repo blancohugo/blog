@@ -1,0 +1,85 @@
+{
+    "name": "blancohugo/blog",
+    "description": "blancohugo.com blog",
+    "version": "1.12.1",
+    "type": "project",
+    "homepage": "https://blancohugo.com",
+    "license": "MIT",
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "scripts-dev": {
+            "post-autoload-dump": "vendor/bin/captainhook install -f -s"
+        },
+        "laminas": {
+            "component-whitelist": [
+                "mezzio/mezzio",
+                "mezzio/mezzio-helpers",
+                "mezzio/mezzio-router",
+                "laminas/laminas-httphandlerrunner",
+                "mezzio/mezzio-fastroute",
+                "mezzio/mezzio-twigrenderer"
+            ]
+        }
+    },
+    "require": {
+        "php": "^7.4",
+        "erusev/parsedown": "^1.7",
+        "laminas/laminas-component-installer": "^2.1.2",
+        "laminas/laminas-config-aggregator": "^1.2",
+        "laminas/laminas-di": "^3.1",
+        "laminas/laminas-diactoros": "^1.8.7 || ^2.2.2",
+        "laminas/laminas-servicemanager": "^3.4",
+        "laminas/laminas-stdlib": "^3.2.1",
+        "laminas/laminas-zendframework-bridge": "^1.0",
+        "mezzio/mezzio": "^3.2.1",
+        "mezzio/mezzio-fastroute": "^3.0.3",
+        "mezzio/mezzio-helpers": "^5.3",
+        "mezzio/mezzio-twigrenderer": "^2.6",
+        "twig/markdown-extra": "^3.0",
+        "webmozart/glob": "^4.1"
+    },
+    "require-dev": {
+        "captainhook/captainhook": "^5.3",
+        "captainhook/plugin-composer": "^5.2",
+        "filp/whoops": "^2.7.1",
+        "laminas/laminas-development-mode": "^3.2",
+        "mezzio/mezzio-tooling": "^1.3",
+        "mikey179/vfsstream": "^1.6",
+        "neronmoon/scriptsdev": "^0.1.7",
+        "phpspec/prophecy": "^1.10.3",
+        "phpspec/prophecy-phpunit": "^2.0",
+        "phpunit/phpunit": "^7.5.20 || ^8.5.2 || ^9.0.1",
+        "ramsey/conventional-commits": "^1.0",
+        "roave/security-advisories": "dev-master",
+        "slevomat/coding-standard": "^6.3",
+        "squizlabs/php_codesniffer": "^3.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "BlancoHugo\\Blog\\": "src/Blog/src/",
+            "BlancoHugo\\Blog\\Common\\": "src/Common/src/",
+            "BlancoHugo\\Blog\\File\\": "src/File/src/",
+            "BlancoHugo\\Blog\\Page\\": "src/Page/src/",
+            "BlancoHugo\\Blog\\Post\\": "src/Post/src/",
+            "BlancoHugo\\Blog\\Twig\\": "src/Twig/src/"
+        }
+    },
+    "scripts": {
+        "development-disable": "laminas-development-mode disable",
+        "development-enable": "laminas-development-mode enable",
+        "development-status": "laminas-development-mode status",
+        "mezzio": "mezzio --ansi",
+        "check": [
+            "@cs-check",
+            "@test"
+        ],
+        "cache:clear": "php bin/clear-config-cache.php",
+        "cs:check": "phpcs",
+        "cs:fix": "phpcbf",
+        "serve": "php -S 0.0.0.0:8080 -t public/",
+        "test": "phpunit --colors=always --testdox",
+        "test:coverage": "phpunit --colors=always --coverage-clover build/clover.xml --coverage-html build/html"
+    }
+}

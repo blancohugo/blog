@@ -1,0 +1,19 @@
+{% extends '@layout/default.html.twig' %}
+
+{% block title %}Archive{% endblock %}
+
+{% block content %}
+    {% for postDate, groupedPosts in posts %}
+        <div class="post-archive">
+            <h2>{{ date(postDate)|date('F, Y') }}</h2>
+            <ul>
+                {% for post in groupedPosts %}
+                <li>
+                    <span class="day">{{ post.date|date('j') }}</span>
+                    <a class="sub-title" href="{{ path('post.detail', {post: post.slug}) }}">{{ post.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
+{% endblock %}

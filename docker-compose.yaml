@@ -1,0 +1,30 @@
+version: "3.1"
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: blog-nginx
+    working_dir: /app
+    depends_on:
+      - php
+    volumes:
+      - .:/app:delegated
+      - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - blog-network
+    ports:
+      - "80:80"
+  php:
+    build: docker/php
+    container_name: blog-php
+    working_dir: /app
+    volumes:
+      - .:/app:delegated
+    networks:
+      - blog-network
+    ports:
+      - "9000"
+      - "9001"
+    command: sh /app/docker/php/php-fpm.sh
+networks:
+  blog-network:
+    driver: bridge
