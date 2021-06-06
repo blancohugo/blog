@@ -1,7 +1,7 @@
 {
     "name": "blancohugo/blog",
     "description": "blancohugo.com blog",
-    "version": "1.12.1",
+    "version": "1.0.0",
     "type": "project",
     "homepage": "https://blancohugo.com",
     "license": "MIT",
@@ -25,7 +25,6 @@
     },
     "require": {
         "php": "^7.4 || ^8.0",
-        "composer-plugin-api": "^2.0",
         "erusev/parsedown": "^1.7",
         "laminas/laminas-component-installer": "^2.1.2",
         "laminas/laminas-config-aggregator": "^1.2",
