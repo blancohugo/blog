@@ -80,6 +80,6 @@
         "cs:fix": "phpcbf",
         "serve": "php -S 0.0.0.0:8080 -t public/",
         "test": "phpunit --colors=always --testdox",
-        "test:coverage": "phpunit --colors=always --coverage-clover build/clover.xml --coverage-html build/html"
+        "test:coverage": "XDEBUG_MODE=coverage phpunit --colors=always --coverage-clover build/clover.xml --coverage-html build/html"
     }
 }
