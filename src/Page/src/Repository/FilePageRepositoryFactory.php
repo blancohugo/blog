@@ -28,13 +28,13 @@ class FilePageRepositoryFactory
 
         if (!array_key_exists('path', $pages) || !$pages['path']) {
             throw new \RuntimeException(
-                sprintf('"%" is a required config and cannot be empty', 'resources.pages.path')
+                sprintf('"%s" is a required config and cannot be empty', 'resources.pages.path')
             );
         }
 
         if (!array_key_exists('extension', $pages) || !$pages['extension']) {
             throw new \RuntimeException(
-                sprintf('"%" is a required config and cannot be empty', 'resources.pages.extension')
+                sprintf('"%s" is a required config and cannot be empty', 'resources.pages.extension')
             );
         }
 

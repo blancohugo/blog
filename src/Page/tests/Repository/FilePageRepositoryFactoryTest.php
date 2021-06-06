@@ -6,6 +6,7 @@ use BlancoHugo\Blog\Page\Repository\FilePageRepository;
 use BlancoHugo\Blog\Page\Repository\FilePageRepositoryFactory;
 use BlancoHugo\Blog\Page\Service\CreatePageFromFileService;
 use org\bovigo\vfs\vfsStream;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;
@@ -35,7 +36,7 @@ class FilePageRepositoryFactoryTest extends TestCase
         return $container;
     }
 
-    public function getCreateService(): CreatePageFromFileService
+    public function getCreateService(): MockObject
     {
         return $this->getMockBuilder(CreatePageFromFileService::class)
             ->disableOriginalConstructor()

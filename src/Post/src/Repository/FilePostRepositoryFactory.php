@@ -28,13 +28,13 @@ class FilePostRepositoryFactory
 
         if (!array_key_exists('path', $posts) || !$posts['path']) {
             throw new \RuntimeException(
-                sprintf('"%" is a required config and cannot be empty', 'resources.posts.path')
+                sprintf('"%s" is a required config and cannot be empty', 'resources.posts.path')
             );
         }
 
         if (!array_key_exists('extension', $posts) || !$posts['extension']) {
             throw new \RuntimeException(
-                sprintf('"%" is a required config and cannot be empty', 'resources.posts.extension')
+                sprintf('"%s" is a required config and cannot be empty', 'resources.posts.extension')
             );
         }
 

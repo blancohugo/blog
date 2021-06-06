@@ -6,6 +6,7 @@ use BlancoHugo\Blog\Post\Repository\FilePostRepository;
 use BlancoHugo\Blog\Post\Repository\FilePostRepositoryFactory;
 use BlancoHugo\Blog\Post\Service\CreatePostFromFileService;
 use org\bovigo\vfs\vfsStream;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;
@@ -35,7 +36,7 @@ class FilePostRepositoryFactoryTest extends TestCase
         return $container;
     }
 
-    public function getCreateService(): CreatePostFromFileService
+    public function getCreateService(): MockObject
     {
         return $this->getMockBuilder(CreatePostFromFileService::class)
             ->disableOriginalConstructor()
