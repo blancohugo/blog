@@ -8,7 +8,7 @@ RUN apt-get update \
     && docker-php-ext-enable xdebug \
     && rm -rf /var/lib/apt/lists/*
 
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+COPY --from=composer:2.0 /usr/bin/composer /usr/bin/composer
 
 EXPOSE 9000
 EXPOSE 9001

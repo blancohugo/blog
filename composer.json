@@ -25,6 +25,7 @@
     },
     "require": {
         "php": "^7.4 || ^8.0",
+        "composer-runtime-api": "^2.0",
         "erusev/parsedown": "^1.7",
         "laminas/laminas-component-installer": "^2.1.2",
         "laminas/laminas-config-aggregator": "^1.2",
@@ -43,6 +44,7 @@
     "require-dev": {
         "captainhook/captainhook": "^5.3",
         "captainhook/plugin-composer": "^5.2",
+        "composer/composer": "^2.0",
         "filp/whoops": "^2.7.1",
         "laminas/laminas-development-mode": "^3.2",
         "mezzio/mezzio-tooling": "^1.3",
