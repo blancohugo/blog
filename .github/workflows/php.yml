@@ -84,7 +84,7 @@ jobs:
       uses: codecov/codecov-action@v1.0.12
       with:
         name: Code coverage
-        token: c07793bf-58fd-418f-b5e1-cdb392943dc3
+        token: 07f39e06-24a4-41d1-8208-8599cb68fa16
         directory: build
         flags: unit
         fail_ci_if_error: true
