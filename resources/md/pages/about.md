@@ -3,4 +3,4 @@
 
 ## About page
 
-There is nothing to say
+There is nothing to say, for now.
