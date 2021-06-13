@@ -63,6 +63,14 @@ class FilePostRepository extends FileRepository implements PostRepositoryInterfa
     /**
      * {@inheritDoc}
      */
+    public function findPublished(int $quantity = null): array
+    {
+        return $this->filter(fn(Post $post) => $post->isPublished(), $quantity);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function findBySlug(string $slug): ?Post
     {
         return $this->load($slug);

@@ -27,7 +27,7 @@ class GetPostArchiveHandlerTest extends TestCase
         $mock = $this->getMockBuilder(PostRepositoryInterface::class)
             ->getMock();
 
-        $mock->method('findAll')->willReturn($findReturn);
+        $mock->method('findPublished')->willReturn($findReturn);
         return $mock;
     }
 
@@ -68,7 +68,7 @@ class GetPostArchiveHandlerTest extends TestCase
     {
         $repository = $this->getRepository([]);
         $repository->expects($this->once())
-            ->method('findAll');
+            ->method('findPublished');
 
         $handler = new GetPostArchiveHandler(
             $this->getTemplateRenderer(),
@@ -93,7 +93,7 @@ class GetPostArchiveHandlerTest extends TestCase
 
         $repository = $this->getRepository($posts);
         $repository->expects($this->once())
-            ->method('findAll');
+            ->method('findPublished');
 
         $handler = new GetPostArchiveHandler(
             $this->getTemplateRenderer(),

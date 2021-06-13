@@ -12,18 +12,26 @@ use BlancoHugo\Blog\Post\Model\Post;
 interface PostRepositoryInterface
 {
     /**
-     * Find a post by slug
-     *
-     * @param string $slug
-     * @return Post|null
-     */
-    public function findBySlug(string $slug): ?Post;
-
-    /**
      * Find all posts
      *
      * @param integer $quantity
      * @return array
      */
     public function findAll(int $quantity = null): array;
+
+    /**
+     * Find all published posts
+     *
+     * @param integer $quantity
+     * @return array
+     */
+    public function findPublished(int $quantity = null): array;
+
+    /**
+     * Find a post by slug
+     *
+     * @param string $slug
+     * @return Post|null
+     */
+    public function findBySlug(string $slug): ?Post;
 }

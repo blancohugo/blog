@@ -55,7 +55,7 @@ class GetPostDetailHandler implements RequestHandlerInterface
 
         $post = $this->repository->findBySlug($postSlug);
 
-        if (!$post) {
+        if (!$post || !$post->isPublished()) {
             return new Response\HtmlResponse($this->template->render('error::404'));
         }
 

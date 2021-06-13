@@ -1,8 +1,8 @@
 @title Results will be generated inside the build directory
 @author Hugo Blanco
-@date 2019-10-08
+@date 2019-10-24
 @summary Some quick example text to build on the card title and make up the bulk of the card's content.
-@published true
+@published false
 
 ## Design choices
 

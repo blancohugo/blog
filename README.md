@@ -9,7 +9,7 @@ This application is deployed to Heroku with test, staging and production environ
 
 # Content
 
-This engine blog loads `Markdown` files to render pages and posts, inside the `/resources` directory.
+This blog engine loads `Markdown` files to render pages and posts, inside the `/resources` directory.
 
 The filenames are used directly as routes, but some of them have some additional features.
 

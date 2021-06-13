@@ -32,6 +32,10 @@ class FilePostRepositoryTest extends TestCase
             'second-post' => new Post('Second post', 'Summary', 'second-post', 'Second post content'),
             'third-post' => new Post('Third post', 'Summary', 'third-post', 'Third post content')
         ];
+
+        $this->posts['first-post']->setPublished(true);
+        $this->posts['second-post']->setPublished(true);
+        $this->posts['third-post']->setPublished(false);
     }
 
     public function getCreateService(): ObjectProphecy
@@ -148,5 +152,34 @@ class FilePostRepositoryTest extends TestCase
 
         $expectedArray = ['third-post' => $this->posts['third-post']];
         $this->assertSame($expectedArray, $repository->findAll(1));
+    }
+
+    /**
+     * @test
+     */
+    public function findPublishedCanReturnFilteredPosts()
+    {
+        $repository = new FilePostRepository(
+            $this->getCreateService()->reveal(),
+            $this->root->url() . '/resources',
+            'md'
+        );
+
+        $this->assertEquals(2, count($repository->findPublished()));
+    }
+
+    /**
+     * @test
+     */
+    public function findPublishedCanBeLimited()
+    {
+        $repository = new FilePostRepository(
+            $this->getCreateService()->reveal(),
+            $this->root->url() . '/resources',
+            'md'
+        );
+
+        $expectedArray = ['second-post' => $this->posts['second-post']];
+        $this->assertSame($expectedArray, $repository->findPublished(1));
     }
 }
