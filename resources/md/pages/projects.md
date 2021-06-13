@@ -1,7 +1,14 @@
 @title Projects
 @author Hugo Blanco
 
-## Look at this sweet page
+## Projects
 
-this is another custom page
-totally not a post
+All my projects are available on [Github](https://github.com/blancohugo).
+
+#### Blog
+
+[![blancohugo/blog - GitHub](https://gh-card.dev/repos/blancohugo/blog.svg?fullname=)](https://github.com/blancohugo/blog)
+
+#### Correios
+
+[![blancohugo/correios - GitHub](https://gh-card.dev/repos/blancohugo/correios.svg?fullname=)](https://github.com/blancohugo/correios)
