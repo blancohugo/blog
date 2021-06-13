@@ -44,6 +44,13 @@ a:hover {
     font-size: 1rem;
 }
 
+/* Blockquote */
+blockquote {
+    padding-left: 20px;
+    border-left: 4px solid;
+    color: #7f7f7f;
+}
+
 /* Blink */
 @keyframes blinker {
     50% {
@@ -177,7 +184,7 @@ a:hover {
 .nav-link .far,
 .nav-link .fas {
     margin-right: 3px;
-    width: 15px;
+    width: 20px;
     text-align: center;
 }
 
