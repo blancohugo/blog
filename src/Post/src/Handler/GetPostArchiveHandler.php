@@ -60,7 +60,7 @@ class GetPostArchiveHandler implements RequestHandlerInterface
      */
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        $posts = $this->repository->findAll();
+        $posts = $this->repository->findPublished();
         $posts = ($this->grouper)($posts);
 
         return new Response\HtmlResponse($this->template->render('post::archive', ['posts' => $posts]));

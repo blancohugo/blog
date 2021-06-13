@@ -49,7 +49,7 @@ class HomePageHandler implements RequestHandlerInterface
      */
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        $posts = $this->repository->findAll(6);
+        $posts = $this->repository->findPublished(6);
         return new Response\HtmlResponse($this->template->render('app::home-page', ['posts' => $posts]));
     }
 }
